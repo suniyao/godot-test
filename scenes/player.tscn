@@ -1,9 +1,10 @@
-[gd_scene load_steps=43 format=3 uid="uid://dult3l8r8es6l"]
+[gd_scene load_steps=44 format=3 uid="uid://dult3l8r8es6l"]
 
 [ext_resource type="Script" uid="uid://cqbig1ekuet31" path="res://scripts/player.gd" id="1_dqkch"]
 [ext_resource type="Texture2D" uid="uid://b8s1tlhkqvcx0" path="res://assets/sprites/character/Swimming.png" id="1_i3pqv"]
 [ext_resource type="Texture2D" uid="uid://b5k4gsnlasp8a" path="res://assets/sprites/character/Swimming_Dive.png" id="2_hqtel"]
 [ext_resource type="Texture2D" uid="uid://5t4ojktj8ihu" path="res://assets/sprites/character/Walking.png" id="3_sweqy"]
+[ext_resource type="Script" uid="uid://ykactq2ydbna" path="res://scripts/noman_sprite.gd" id="5_qlg0r"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2hs0m"]
 atlas = ExtResource("1_i3pqv")
@@ -227,7 +228,7 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.01,
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_iruf7")
 }, {
 "duration": 1.0,
@@ -270,7 +271,7 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ibah8"]
 radius = 8.0
-height = 66.0
+height = 48.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dqkch"]
 size = Vector2(64, 9)
@@ -281,11 +282,13 @@ script = ExtResource("1_dqkch")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(4, -64)
 sprite_frames = SubResource("SpriteFrames_ny14h")
-animation = &"swim"
-frame_progress = 0.550053
+animation = &"walk"
+frame = 2
+frame_progress = 0.246575
+script = ExtResource("5_qlg0r")
 
 [node name="walkCollisionShape" type="CollisionShape2D" parent="."]
-position = Vector2(0, -34)
+position = Vector2(0, -25)
 shape = SubResource("CapsuleShape2D_ibah8")
 
 [node name="swimCollisionShape" type="CollisionShape2D" parent="."]
