@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="godot test"
-run/main_scene="uid://r0eq0kj2wt4s"
+run/main_scene="uid://muvxrtivagdc"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
 
 [rendering]
 
