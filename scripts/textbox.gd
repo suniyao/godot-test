@@ -8,6 +8,8 @@ extends CanvasLayer
 @onready var CHAR_READ_RATE = 0.03
 @onready var tween = create_tween()
 
+@export var text_queue: Array[String] = ["test test somethings inside"]
+
 enum State {
 	READY,
 	READING, 
@@ -15,19 +17,15 @@ enum State {
 }
 
 var current_state = State.READY
-var text_queue = []
 
 func _ready() -> void:
 	print("starting state: State.READY")
 	hide_textbox()
-	queue_text("knock knock knock")
-	queue_text("second text to be added")
-	queue_text("third text to be added")
-	queue_text("fourth text to be added")
-	queue_text("fifth text to be added")
-	
-	
-	
+	#queue_text("second text to be added")
+	#queue_text("third text to be added")
+	#queue_text("fourth text to be added")
+	#queue_text("fifth text to be added")
+
 func _process(delta):
 	match current_state:
 		State.READY:

@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://c3m2ta00po6he"]
+
+[ext_resource type="PackedScene" uid="uid://bk5rig1btvrdp" path="res://scenes/components/textbox.tscn" id="1_cokmr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cokmr"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="start scene" type="Node2D"]
+
+[node name="Textbox" parent="." instance=ExtResource("1_cokmr")]
+text_queue = Array[String](["i can still feel your hand...", "...just barely", "the water was cold. but you were colder", "you said you'd never leave me", "so why am i still here?"])
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 1.0
+offset_right = 1154.0
+offset_bottom = 651.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Panel" type="Panel" parent="PanelContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_cokmr")
