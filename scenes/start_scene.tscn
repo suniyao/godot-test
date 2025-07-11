@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dcrydrllfou2b"]
+[gd_scene load_steps=5 format=3 uid="uid://dcrydrllfou2b"]
 
 [ext_resource type="PackedScene" uid="uid://bk5rig1btvrdp" path="res://scenes/components/textbox.tscn" id="1_cokmr"]
+[ext_resource type="AudioStream" uid="uid://ts0dmpsvhn1h" path="res://assets/audios/ocean_sounds.mp3" id="2_3tgnh"]
+[ext_resource type="AudioStream" uid="uid://cstwpodfiakpc" path="res://assets/audios/the_depths_we_shared.wav" id="3_u7rsi"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cokmr"]
 bg_color = Color(0, 0, 0, 1)
@@ -18,6 +20,14 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_cokmr")
 
 [node name="Textbox" parent="." instance=ExtResource("1_cokmr")]
-text_queue = Array[String](["i can still feel your hand...", "...just barely", "the water was cold. but you were colder", "you said you'd never leave me", "so why am i still here?"])
+text_queue = Array[String](["i can still feel your hand...", "...just barely", "the water was cold. but you were colder", "you said you'd never leave me...", "...so why am i still here?"])
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_3tgnh")
+volume_db = -20.0
+autoplay = true
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_u7rsi")
+volume_db = -10.0
+autoplay = true
