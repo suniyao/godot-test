@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://cbmvss4hu8s3r"]
+
+[ext_resource type="Script" uid="uid://dj0wa15dmfgok" path="res://scripts/scene_label.gd" id="1_wt2ys"]
+[ext_resource type="FontFile" uid="uid://dqcq37tgd7oxn" path="res://assets/Better Pixels Font.ttf" id="2_0rimd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ojqqc"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_wt2ys")
+text = "Chapter 1"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ojqqc")
+
+[node name="Label" type="Label" parent="CanvasLayer/PanelContainer"]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_0rimd")
+theme_override_font_sizes/font_size = 100
+text = "modify on text variable"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
